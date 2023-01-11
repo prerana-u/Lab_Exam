@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<body>
+    <div>
+        <h1>Employee Form</h1>
+        <h3>Enter Your Details</h3>
+        <form id="formid" method="post" action="/postdata">
+            <label>Employee ID</label>
+            <input type="number" name="id" placeholder="Enter ID" required/>
+            <br><br>
+            <label>Employee Name</label>
+            <input type="text" name="ename" placeholder="Enter Name" id="name" onblur="Validate()" required/>
+            <br><br>
+            <label>Employee Designation</label>
+            <input type="text" name="des" placeholder="Enter Designation" required/>
+            <br><br>
+            <label>Employee Department</label>
+            <input type="text" name="dep" placeholder="Enter Department" required/>
+            <br><br>
+            <label>Employee Salary</label>
+            <input type="number" name="sal" placeholder="Enter Salary" required/>
+            <br><br>
+            <label>Employee Location</label>
+            <input type="text" name="loc" placeholder="Enter Location" required/>
+            <br><br>
+            <input type="submit" value="Submit" />
+        </form>
+    </div>
+    <script>
+        function Validate(){
+            var regName =  /^[a-zA-Z ]{2,30}$/;
+            var name = document.getElementById('name').value;
+           // var error = document.getElementById("error");
+            if (!regName.test(name) && name!='')
+            {
+           alert("Invalid name!")
+            document.getElementById("name").value='';
+            document.getElementById("name").focus();
+            }
+        }
+      
+    </script>
+</body>
+</html>
