@@ -19,10 +19,10 @@
             <input type="text" name="ename" placeholder="Enter Name" id="name" onblur="Validate()" required/>
             <br><br>
             <label>Employee Designation</label>
-            <input type="text" name="des" placeholder="Enter Designation" required/>
+            <input type="text" name="des" placeholder="Enter Designation"  id="des" onblur="Validate()" required/>
             <br><br>
             <label>Employee Department</label>
-            <input type="text" name="dep" placeholder="Enter Department" required/>
+            <input type="text" name="dep" placeholder="Enter Department" id="dep" onblur="Validate()" required/>
             <br><br>
             <label>Employee Salary</label>
             <input type="number" name="sal" placeholder="Enter Salary" required/>
@@ -37,12 +37,26 @@
         function Validate(){
             var regName =  /^[a-zA-Z ]{2,30}$/;
             var name = document.getElementById('name').value;
+            var dep= document.getElementById('dep').value;
+            var des= document.getElementById('des').value;
            // var error = document.getElementById("error");
             if (!regName.test(name) && name!='')
             {
            alert("Invalid name!")
             document.getElementById("name").value='';
             document.getElementById("name").focus();
+            }
+            if (!regName.test(dep) && dep!='')
+            {
+           alert("Invalid Department!")
+            document.getElementById("dep").value='';
+            document.getElementById("dep").focus();
+            }
+            if (!regName.test(des) && des!='')
+            {
+           alert("Invalid Designation!")
+            document.getElementById("des").value='';
+            document.getElementById("des").focus();
             }
         }
       

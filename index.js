@@ -53,6 +53,16 @@ app.get('/sal', (req, res) => {
         res.end(JSON.stringify(result))
     });
 })
+app.get('/depsearch', (req, res) => {
+    // Display all data
+    res.status(200)
+    res.setHeader('Content-Type', 'application/json')
+    con.query("SELECT * from emp where edep=\'Sales\'", function (err, result) {
+        if (err) throw err;
+        console.log("Result: " + JSON.stringify(result));
+        res.end(JSON.stringify(result))
+    });
+})
 app.get('/empform', (req, res) => {
     // Display all data
     res.writeHead(200,{'Content-Type':'text/html'})
